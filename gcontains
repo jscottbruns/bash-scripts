@@ -1,0 +1,9 @@
+#!/bin/bash
+SHA=$1
+echo $SHA
+if [[ $SHA == "" ]]; then
+  echo "Usage: git-contains <SHA>"
+  exit 1
+fi
+
+git branch -a --contains $SHA
