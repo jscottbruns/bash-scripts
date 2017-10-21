@@ -1,8 +1,11 @@
 #!/bin/bash
-SHA=$1
-echo $SHA
+BRANCH=$1
+SHA=`git rev-parse $BRANCH`
+
+echo "$BRANCH @$SHA"
+
 if [[ $SHA == "" ]]; then
-  echo "Usage: git-contains <SHA>"
+  echo "Usage: git-contains <BRANCH>"
   exit 1
 fi
 
